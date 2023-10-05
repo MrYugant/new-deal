@@ -1,0 +1,19 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="70" height="70" fill="#F5F5F5"/>
+<g id="About">
+<rect width="1512" height="5677" transform="translate(-116 -3578)" fill="#EAF5FC"/>
+<g id="Group 4851">
+<rect id="Rectangle 7289" width="70" height="70" fill="#245EF5"/>
+<g id="Mask group">
+<mask id="mask0_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="70" height="70">
+<g id="Group 4851_2">
+<rect id="Rectangle 7289_2" width="70" height="70" fill="#245EF5"/>
+</g>
+</mask>
+<g mask="url(#mask0_0_1)">
+<path id="Vector 207" d="M0 37.8605L21.4516 59.125L70 11" stroke="#87A9F9" stroke-width="15" stroke-linecap="square"/>
+</g>
+</g>
+</g>
+</g>
+</svg>

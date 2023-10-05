@@ -1,0 +1,19 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default Styling */
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.logoColor {
+  background: linear-gradient(180deg, #557aff 0%, #8155ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

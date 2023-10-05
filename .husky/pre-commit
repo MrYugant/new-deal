@@ -1,0 +1,54 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️👷 Styling, testing, and building your project before committing 🏗️👷'
+echo 'Please be patient; this may take a while...'
+
+# Check Commit message format
+# npx husky add .husky/commit-msg "npx --no -- commitlint --edit $1" ||
+# (
+#     echo '🤢🤮❌ Oops! It seems like there was an issue while committing. 🤢🤮❌
+#             Conventional Check Failed. Please double-check your commit and make sure it is in the correct format.';
+#     false;
+# )
+
+# Check Prettier standards
+if npm run check-format; then
+    echo '✅✅✅ Your styling looks great! ✅✅✅'
+else
+    echo `🤢🤮🤢🤮 It\'s F**KING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
+            Prettier Check Failed. Run npm run format, add changes, and try to commit again.`
+    exit 1
+fi
+
+# Check ESLint Standards
+if npm run check-lint; then
+    echo '✅✅✅ ESLint standards are met! ✅✅✅'
+else
+    echo '😤🏀👋😤 Get that weak s**t out of here! 😤🏀👋😤 
+            ESLint Check Failed. Make the required changes listed above, add changes, and try to commit again.'
+    exit 1
+fi
+
+# Check tsconfig standards
+if npm run check-types; then
+    echo '✅✅✅ Type check passed! ✅✅✅'
+else
+    echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡
+            Are you seriously trying to write that? Make the changes required above.'
+    exit 1
+fi
+
+# If everything passes... Now we can commit
+# echo '🤔🤔🤔🤔... Alright... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
+
+# if npm run build; then
+#     echo '✅✅✅ Your build succeeded! ✅✅✅'
+# else
+#     echo '❌👷🔨❌ Better call... Because your build failed ❌👷🔨❌
+#             Next build failed: View the errors above to see why.'
+#     exit 1
+# fi
+
+# If everything passes... Now we can commit
+# echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
